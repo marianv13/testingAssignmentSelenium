@@ -28,7 +28,7 @@ class CarPage extends PageBase {
         driver.findElement(firstOption).click();
         driver.findElement(photoSearchOnlyCheckbox).click();
         driver.findElement(searchButton).click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, 3);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
     }
 

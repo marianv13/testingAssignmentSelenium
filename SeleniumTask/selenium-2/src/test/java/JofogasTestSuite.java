@@ -22,6 +22,7 @@ public class JofogasTestSuite {
         options.setHeadless(true);
         driver = new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), options);
         driver.manage().window().maximize();*/
+        //Change to your path to the project
         System.setProperty("webdriver.chrome.driver", "C:/Users/Lenovo/SeleniumTask/selenium-2/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--window-size=1920,1080");
@@ -60,6 +61,7 @@ public class JofogasTestSuite {
         mainPage.login("jg3ih8@inf.elte.hu","PWDtest54321");
         AccountPage accountPage = new AccountPage(this.driver);
         Assert.assertEquals("https://www.jofogas.hu/fiok", this.driver.getCurrentUrl());
+        Assert.assertTrue(this.driver.getTitle().contains("kom"));
         Boolean setting1 = accountPage.getNewsletterSettings();
         accountPage.changeNewsletterSettings();
         Boolean setting2 = accountPage.getNewsletterSettings();
@@ -75,6 +77,7 @@ public class JofogasTestSuite {
         mainPage.login("jg3ih8@inf.elte.hu","PWDtest54321");
         AccountPage accountPage = new AccountPage(this.driver);
         Assert.assertEquals("https://www.jofogas.hu/fiok", this.driver.getCurrentUrl());
+        Assert.assertTrue(this.driver.getTitle().contains("kom"));
         String oldName = accountPage.getUsername();
         accountPage.changeUsername();
         String newName = accountPage.getUsername();
@@ -90,6 +93,7 @@ public class JofogasTestSuite {
         mainPage.login("jg3ih8@inf.elte.hu","PWDtest54321");
         AdvertisementPage advertisementPage = new AdvertisementPage(this.driver);
         Assert.assertEquals("https://www.jofogas.hu/fiok/hirdeteseim", this.driver.getCurrentUrl());
+        Assert.assertTrue(this.driver.getTitle().contains("Hirdet"));
         Assert.assertTrue(advertisementPage.checkAdvertisementContentEmptyElement().equals("Adj fel egyet most!"));
     }
 

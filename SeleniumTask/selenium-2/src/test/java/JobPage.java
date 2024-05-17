@@ -26,7 +26,7 @@ class JobPage extends PageBase {
     public void searchForJob() {
         driver.findElement(jobInputField).sendKeys("programfejlesztő");
         driver.findElement(searchButton).click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, 3);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
     }
 

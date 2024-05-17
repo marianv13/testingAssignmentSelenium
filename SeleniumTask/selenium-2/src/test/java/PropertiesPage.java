@@ -31,7 +31,7 @@ class PropertiesPage extends PageBase {
         driver.findElement(minSizeInput).sendKeys("50");
         driver.findElement(maxSizeInput).sendKeys("100");
         driver.findElement(searchButton).click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, 3);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
     }
 
